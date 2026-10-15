@@ -1,0 +1,16 @@
+<main>
+  <h1>Coordonnées soumises</h1>
+  @if (data.info; as info) {
+    <table>
+      <tbody>
+        <tr><th>Prénom</th><td>{{ info.pren }}</td></tr>
+        <tr><th>Nom</th><td>{{ info.nom }}</td></tr>
+        <tr><th>Téléphone</th><td>{{ info.tel || 'Non fourni' }}</td></tr>
+        <tr><th>Courriel</th><td>{{ info.mail || 'Non fourni' }}</td></tr>
+      </tbody>
+    </table>
+  } @else {
+    <p>Aucune donnée soumise.</p>
+  }
+  <a routerLink="/formulaire">Retour au formulaire</a>
+</main>

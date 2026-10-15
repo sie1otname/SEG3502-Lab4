@@ -1,0 +1,15 @@
+body { font-family: Arial, sans-serif; background: #f4f4f4; color: #222; margin: 0; }
+main { background: white; max-width: 600px; margin: 45px auto; padding: 25px; border: 1px solid #ddd; border-radius: 6px; }
+h1 { font-size: 25px; margin-top: 0; }
+form { display: flex; flex-direction: column; }
+label { margin-top: 17px; margin-bottom: 5px; }
+input { padding: 10px; border: 1px solid #bbb; border-radius: 4px; font-size: 15px; }
+input:focus { outline: 1px solid #2258a0; }
+.err { color: #b32032; font-size: 13px; margin: 5px 0 0; }
+button { margin-top: 22px; padding: 11px; border: 0; background: #2258a0; color: white; cursor: pointer; border-radius: 4px; }
+button:disabled { background: #999; cursor: not-allowed; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+th, td { border: 1px solid #bbb; padding: 12px; text-align: left; }
+th { width: 120px; background: #f0f0f0; }
+a { color: #2258a0; }
+@media (max-width: 650px) { main { margin: 10px; padding: 18px; } }

@@ -1,0 +1,32 @@
+<main>
+  <h1>Formulaire de coordonnées</h1>
+  <p>Les champs avec * sont obligatoires.</p>
+
+  <form [formGroup]="form" (ngSubmit)="send()">
+    <label for="pren">Prénom *</label>
+    <input id="pren" type="text" formControlName="pren" autocomplete="given-name">
+    @if (form.controls.pren.touched && form.controls.pren.hasError('required')) {
+      <p class="err">Le prénom est obligatoire.</p>
+    }
+
+    <label for="nom">Nom *</label>
+    <input id="nom" type="text" formControlName="nom" autocomplete="family-name">
+    @if (form.controls.nom.touched && form.controls.nom.hasError('required')) {
+      <p class="err">Le nom est obligatoire.</p>
+    }
+
+    <label for="tel">Téléphone (facultatif)</label>
+    <input id="tel" type="tel" formControlName="tel" inputmode="numeric" placeholder="6135550123">
+    @if (form.controls.tel.touched && form.controls.tel.hasError('pattern')) {
+      <p class="err">Entrez 10 chiffres. Le 1er et le 4e ne peuvent pas être 0.</p>
+    }
+
+    <label for="mail">Courriel (facultatif)</label>
+    <input id="mail" type="email" formControlName="mail" autocomplete="email" placeholder="nom@exemple.com">
+    @if (form.controls.mail.touched && form.controls.mail.hasError('email')) {
+      <p class="err">Entrez un courriel valide.</p>
+    }
+
+    <button type="submit" [disabled]="form.invalid">Soumettre</button>
+  </form>
+</main>
